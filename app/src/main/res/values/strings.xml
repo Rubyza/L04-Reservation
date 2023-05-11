@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">L04-Reservation</string>
+    <string name="reset">Reset</string>
+    <string name="book">Book</string>
+    <string name="non_smoking">Non-Smoking</string>
+    <string name="smoking">Smoking</string>
+    <string name="table_type">Table Type:</string>
+    <string name="pax">Pax:</string>
+    <string name="_65">+65</string>
+    <string name="name">Name:</string>
 </resources>

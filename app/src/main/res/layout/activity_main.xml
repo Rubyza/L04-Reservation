@@ -25,7 +25,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Name: " />
+                    android:text="@string/name" />
 
                 <EditText
                     android:id="@+id/editTextName"
@@ -47,7 +47,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="+65" />
+                    android:text="@string/_65" />
 
                 <EditText
                     android:id="@+id/editTextPhoneNumber"
@@ -69,7 +69,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Pax: " />
+                    android:text="@string/pax" />
 
                 <EditText
                     android:id="@+id/editTextPax"
@@ -106,7 +106,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Table Type: " />
+                    android:text="@string/table_type" />
 
                 <RadioGroup
                     android:id="@+id/radioGroupSmoke"
@@ -119,14 +119,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Smoking" />
+                        android:text="@string/smoking" />
 
                     <RadioButton
                         android:id="@+id/radioNonSmoking"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Non-Smoking" />
+                        android:text="@string/non_smoking" />
                 </RadioGroup>
             </LinearLayout>
 
@@ -141,14 +141,14 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Book" />
+                    android:text="@string/book" />
 
                 <Button
                     android:id="@+id/buttonReset"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Reset" />
+                    android:text="@string/reset" />
             </LinearLayout>
 
             <TextView
@@ -156,6 +156,36 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="3" />
+
+            <TextView
+                android:id="@+id/textViewphonenum"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/textViewpax"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/textViewdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/textViewtime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/textViewsmoking"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
 
         </LinearLayout>
     </ScrollView>

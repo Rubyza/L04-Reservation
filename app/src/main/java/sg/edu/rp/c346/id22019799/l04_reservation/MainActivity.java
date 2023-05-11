@@ -13,7 +13,7 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 
 public class MainActivity extends AppCompatActivity {
-    TextView tvBook;
+    TextView tvBook, tvPhoneNum,tvPax,tvDate,tvTime,tvSmoke;
     EditText editName;
     EditText editPhoneNumber;
     EditText editPax;
@@ -31,6 +31,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         tvBook=findViewById(R.id.textViewDisplayIBooking);
+        tvPhoneNum=findViewById(R.id.textViewphonenum);
+        tvPax=findViewById(R.id.textViewpax);
+        tvDate=findViewById(R.id.textViewdate);
+        tvTime=findViewById(R.id.textViewtime);
+        tvSmoke=findViewById(R.id.textViewsmoking);
         editName=findViewById(R.id.editTextName);
         editPhoneNumber=findViewById(R.id.editTextPhoneNumber);
         editPax=findViewById(R.id.editTextPax);
@@ -38,8 +43,8 @@ public class MainActivity extends AppCompatActivity {
         dp=findViewById(R.id.datePicker);
         tp=findViewById(R.id.timePicker);
         radioGroup=findViewById(R.id.radioGroupSmoke);
-        radioSmoking=findViewById((R.id.radioSmoking));
-        radioNonSmoking=findViewById((R.id.radioNonSmoking));
+        //radioSmoking=findViewById((R.id.radioSmoking));
+        //radioNonSmoking=findViewById((R.id.radioNonSmoking));
         btnBook=findViewById(R.id.buttonBook);
         btnReset=findViewById((R.id.buttonReset));
 
@@ -51,7 +56,51 @@ public class MainActivity extends AppCompatActivity {
 
                 //Phone Number
                 String phonenumstring = editPhoneNumber.getText().toString();
-                int p = Integer.parseInt(Paxstring);
+                int phonenumber = Integer.parseInt(phonenumstring);
+
+                //Pax
+                String paxstring = editPhoneNumber.getText().toString();
+                int pax = Integer.parseInt(paxstring);
+
+                //Date
+                int nowYear = dp.getYear();
+                int nowMonth = dp.getMonth()+1;
+                int nowDay = dp.getDayOfMonth();
+                //smoking ?
+                int checkedRadioId = radioGroup.getCheckedRadioButtonId();
+                //Time
+                int nowHour = tp.getHour();
+                int nowMin = tp.getMinute();
+                if(nowMin<10 && checkedRadioId==R.id.radioSmoking){
+                    tvBook.setText("Name: "+name);
+                    tvPhoneNum.setText("Phone No. : "+phonenumber);
+                    tvPax.setText("Pax: "+pax);
+                    tvDate.setText("Date: "+nowDay+"/"+nowMonth+"/"+nowYear);
+                    tvTime.setText("Time: "+nowHour+":0"+nowMin);
+                    tvSmoke.setText("Table Type: Smoking");
+                }
+                else if(nowMin<10 && checkedRadioId==R.id.radioNonSmoking){
+                    tvBook.setText("Name: "+name);
+                    tvPhoneNum.setText("Phone No. : "+phonenumber);
+                    tvPax.setText("Pax: "+pax);
+                    tvDate.setText("Date: "+nowDay+"/"+nowMonth+"/"+nowYear);
+                    tvTime.setText("Time: "+nowHour+":0"+nowMin);
+                    tvSmoke.setText("Table Type: Non Smoking");
+                }else if(nowMin>=10 && checkedRadioId==R.id.radioSmoking){
+                    tvBook.setText("Name: "+name);
+                    tvPhoneNum.setText("Phone No. : "+phonenumber);
+                    tvPax.setText("Pax: "+pax);
+                    tvDate.setText("Date: "+nowDay+"/"+nowMonth+"/"+nowYear);
+                    tvTime.setText("Time: "+nowHour+":"+nowMin);
+                    tvSmoke.setText("Table Type: Smoking");
+                }else{
+                    tvBook.setText("Name: "+name);
+                    tvPhoneNum.setText("Phone No. : "+phonenumber);
+                    tvPax.setText("Pax: "+pax);
+                    tvDate.setText("Date: "+nowDay+"/"+nowMonth+"/"+nowYear);
+                    tvTime.setText("Time: "+nowHour+":"+nowMin);
+                    tvSmoke.setText("Table Type: Non Smoking");
+                }
             }
         });
 
